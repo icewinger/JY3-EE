@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#username").blur(function (e) {
+                $.get("A.do",{name:$("#username").val()},function (response,status,xhr) {
+                    if (response == 'true')
+                    {
+                        $("#span1").text("可以注册");
+                    }
+                })
+            })
+        })
+    </script>
+
+
+</head>
+<body>
+<form action="">
+    用户名<input type="text" id="username"><span id="span1"></span>
+    <br>
+    密码<input type="password" id="psw">
+    <br>
+    <button id="btn1">登陆</button>
+
+
+</form>
+</body>
+</html>
