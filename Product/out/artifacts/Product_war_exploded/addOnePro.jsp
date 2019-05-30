@@ -17,15 +17,15 @@
 <form  method="post" action="add.do" enctype="multipart/form-data">
     <div class="form-group" >
         <label for="proName">商品名称</label>
-        <input type="text" class="form-control" id="proName" placeholder="商品名称" name="proname">
+        <input type="text" class="form-control" id="proName" placeholder="商品名称" name="proName">
     </div>
     <div class="form-group">
         <label for="proPrice">商品价格</label>
-        <input type="number" class="form-control" id="proPrice" placeholder="商品价格" min="1.00" max="99999999.99">
+        <input type="number" class="form-control" id="proPrice" placeholder="商品价格" min="1.00" max="99999999.99" name="proPrice">
     </div>
     <div class="form-group">
         <label for="file1">商品图片</label>
-        <input type="file" id="file1" accept="image/jpeg" name="fiel1">
+        <input type="file" id="file1" accept="image/jpeg" name="file1">
         <p class="help-block">请选择图片</p>
     </div>
     <div class="form-group">

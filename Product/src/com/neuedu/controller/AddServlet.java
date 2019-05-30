@@ -36,11 +36,15 @@ public class AddServlet extends HttpServlet {
         String proStock = request.getParameter("proStock");
         String proCateId = request.getParameter("proCateId");
         String proFac = request.getParameter("proFac");
-
         Product product = new Product(ProUtil.getProId(),proName,Double.parseDouble(proPrice),realName,proDes,Short.parseShort(proStock),ProUtil.getNowDate(),Short.parseShort(proCateId),proFac);
-        System.out.println(product);
-        pd.addOneProduct(product);
-        response.sendRedirect("index.jsp");
+       if (null == product)
+       {
+           response.sendRedirect("addOnePro.jsp");
+       }else {
+           pd.addOneProduct(product);
+           response.sendRedirect("query.do");
+       }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
