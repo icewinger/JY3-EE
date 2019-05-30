@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax(
+                {
+                    url: "server.do",
+                    type: "get",
+                    dataType: "json",
+                    complete: function () {
+                        console.log("请求完成")
+                    },
+                    success: function f(date) {
+                        console.log("请求成功")
+                        $.each(date,function (i,val) {
+                            $("tbody").append(
+                                $("<tr><td>"+val.username+"</td><td>"+val.password+"</td></tr>")
+                            )
+                        })
+                    },
+                    error: function () {
+                        console.log("请求失败")
+                    }
+
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+<table border="1px">
+    <thead>
+    <th>用户名</th>
+    <th>密码</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+
+</table>
+</body>
+</html>
