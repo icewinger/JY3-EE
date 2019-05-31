@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+    $(function () {
+        $("#btn1").click(function (e) {
+            e.preventDefault();
+            $.ajax(
+                {
+                    url:"add.do",
+                    type:"post",
+                    data:$("#form1").serialize(),
+                    success:function (date) {
+                        if("true"===date)
+                        {
+                            alert("注册成功");
+                        }else {
+                            alert("注册失败");
+                        }
+                    }
+                }
+            )
+        })
+    })
+</script>
+</head>
+<body>
+<form id="form1">
+    用户名:<input type="text" name="username">
+    <br>
+    密码:<input type="password" name="psw">
+    <br>
+    <button id="btn1">注册</button>
+</form>
+</body>
+</html>
